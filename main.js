@@ -1,5 +1,3 @@
-// CRUD - create read update delete
-
 const getLocalStorage = () => JSON.parse(localStorage.getItem('contato')) ?? []
 const setLocalStorage = (baseContatos) => localStorage.setItem('contato', JSON.stringify(baseContatos))
 
@@ -24,9 +22,18 @@ const deleteContato = (index) => {
     setLocalStorage(baseContatos)
 } 
 
+// VALIDAÇÕES
+
+const isValidNome = () => (document.getElementById('name').value != '')? true : console.log('erro')
+
+const isValidFone = () => (document.getElementById('tel').value != '')? true : console.log('erro')
+
+const isValidEmail = () => ((document.getElementById('email').value.indexOf('@') == -1)&&(document.getElementById('email').value.indexOf('.') == -1)&&(document.getElementById('email').value != ''))
+
 const isValidFields = () => {
-    return document.getElementById('form').reportValidity()
+    return (isValidFone() && isValidNome() && isValidEmail())
 }
+
 
 const clearFields = () => {
     document.getElementById('name').value = ''
@@ -46,7 +53,7 @@ const saveContato = () => {
             nome: document.getElementById('name').value,
             email: document.getElementById('email').value,
             telefone: document.getElementById('tel').value
-        }
+       }
         createContato(contatoEntrada)
         updateLista()
         clearFields()
