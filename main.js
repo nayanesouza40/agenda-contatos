@@ -76,3 +76,4 @@ updateLista()
 // EVENTOS
 document.getElementById('salvar').addEventListener('click', saveContato)
 
+// VIDEOS PAUSADO 1:13:16
