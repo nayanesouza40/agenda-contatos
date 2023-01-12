@@ -52,20 +52,28 @@ const saveContato = () => {
             email: document.getElementById('email').value,
             telefone: document.getElementById('tel').value
        }
-        createContato(contatoEntrada)
-        updateLista()
-        clearFields()
+       const index = document.getElementById('name').dataset.index
+       if(index == 'new') {
+            createContato(contatoEntrada)
+            updateLista()
+            clearFields()
+       } else {
+            updateContato(index, contatoEntrada)
+            clearFields()
+            updateLista()
+       }
+       
     }
 }
 
-const createDiv = (contato) => {
+const createDiv = (contato, index) => {
     const newDiv = document.createElement('div')
     newDiv.innerHTML = `
         <p class="p-name">Nome: ${contato.nome}</p>
         <p class="p-email">Email: ${contato.email}</p>
         <p class="p-tel">Telefone: ${contato.telefone}</p>
-        <button class="editar-contato">Editar</button>
-        <button class="excluir-contato">Excluir</button>
+        <button class="editar" id="edit-${index}">Editar</button>
+        <button class="excluir" id="delete-${index}">Excluir</button>
     `
     document.getElementById('agenda').appendChild(newDiv)
 }
@@ -76,7 +84,38 @@ const updateLista = () => {
     baseContatos.forEach(createDiv)
 }
 
+const preencherCampos = (contato) => {
+    document.getElementById('name').value = contato.nome
+    document.getElementById('tel').value = contato.telefone
+    document.getElementById('email').value = contato.email
+    document.getElementById('name').dataset.index = contato.index
+}
+
+const editDivContato = (index) => {
+    const contato = readContato()[index]
+    contato.index = index
+    preencherCampos(contato)
+}
+
+
+const editDelete = (e) => {
+    if(e.target.type=='submit'){
+        const [action, index] = e.target.id.split('-')
+        if (action == 'edit'){
+            editDivContato(index)
+        } else {
+            const contato = readContato()[index]
+            const response = confirm(`Deseja excluir esse contato ${contato.nome}?`)
+            if (response) {
+                deleteContato(index)
+                updateLista()
+        }}
+    }
+}
+
 updateLista()
 
 // EVENTOS
 document.getElementById('salvar').addEventListener('click', saveContato)
+
+document.getElementById('agenda').addEventListener('click', editDelete)
