@@ -23,17 +23,15 @@ const deleteContato = (index) => {
 } 
 
 // VALIDAÇÕES
+const isValidNome = () => (document.getElementById('name').value != '')? true : console.log('erro')? true : console.log('erro')
 
-const isValidNome = () => (document.getElementById('name').value != '')? true : console.log('erro')
+const isValidFone = () => (document.getElementById('tel').value != '')? true : console.log('erro')? true : console.log('erro')
 
-const isValidFone = () => (document.getElementById('tel').value != '')? true : console.log('erro')
-
-const isValidEmail = () => ((document.getElementById('email').value.indexOf('@') == -1)&&(document.getElementById('email').value.indexOf('.') == -1)&&(document.getElementById('email').value != ''))
+const isValidEmail = () => ((document.getElementById('email').value.indexOf('@') != -1)&&(document.getElementById('email').value.indexOf('.') != -1)&&(document.getElementById('email').value != ''))? true : console.log('erro')
 
 const isValidFields = () => {
     return (isValidFone() && isValidNome() && isValidEmail())
 }
-
 
 const clearFields = () => {
     document.getElementById('name').value = ''
@@ -82,5 +80,3 @@ updateLista()
 
 // EVENTOS
 document.getElementById('salvar').addEventListener('click', saveContato)
-
-// VIDEOS PAUSADO 1:13:16
