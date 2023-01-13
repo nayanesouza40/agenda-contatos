@@ -1,5 +1,103 @@
-/*LISTA DE CONTATOS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height:inherit;
+    justify-content: center;
+    background-color: #F4F4F4;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    margin-top: 5%;
+    padding: 25px;
+}
+
+.container h2 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/*formulário*/
+#form {
+    justify-content: center;
+    background-color: #E4ECE4;
+}
+
+#form div {
+    display: flex;
+    padding: 8px 0;
+}
+
+#form div input {
+    color: #232323;
+    height: inherit;
+}
+
+#form #salvar {
+    width: inherit;
+    height: inherit;
+    padding: 8px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*lista de contato*/
 #agenda {
     display: flex;
     flex-direction: column-reverse;
+}
+
+#agenda div {
+    background-color: #F4E4E4;
+    margin-top: 30px;
+    border: solid 2px #E9B2B2;
+}
+
+.p-name {
+    background-color: #E9B2B2;
+    color: #fff;
+    margin: -2px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+}
+
+.p-tel, .p-email {
+    margin: 4px 10px;
+    text-transform: lowercase;
+}
+
+.excluir {
+    float:right;
+    background-color: #D59591;
+    padding: 0 5px;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+.editar {
+    float:right;
+    margin: 8px;
+    margin-top: -20px;
+    padding: 2px 8px;
+    border: solid 2px #D59591;
+    color: #D59591;
+    background-color: #F4F4F4;
+    border-radius: 6px;
+    font-size: small;
+    cursor: pointer;
+}
+
+.coracao {
+    color: #D59591;
 }

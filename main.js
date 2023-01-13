@@ -69,11 +69,12 @@ const saveContato = () => {
 const createDiv = (contato, index) => {
     const newDiv = document.createElement('div')
     newDiv.innerHTML = `
-        <p class="p-name">Nome: ${contato.nome}</p>
+        <p class="p-name"><span class="coracao">♥</span>&nbsp;&nbsp;${contato.nome}
+        <button class="excluir" id="delete-${index}">x</button>
+        </p>
         <p class="p-email">Email: ${contato.email}</p>
         <p class="p-tel">Telefone: ${contato.telefone}</p>
         <button class="editar" id="edit-${index}">Editar</button>
-        <button class="excluir" id="delete-${index}">Excluir</button>
     `
     document.getElementById('agenda').appendChild(newDiv)
 }
