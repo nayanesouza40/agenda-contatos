@@ -69,7 +69,7 @@ const saveContato = () => {
 const createDiv = (contato, index) => {
     const newDiv = document.createElement('div')
     newDiv.innerHTML = `
-        <p class="p-name"><span class="coracao">♥</span>&nbsp;&nbsp;${contato.nome}
+        <p class="p-name"><span class="coracao">♥</span>&nbsp;${contato.nome}
         <button class="excluir" id="delete-${index}">x</button>
         </p>
         <p class="p-email">Email: ${contato.email}</p>
@@ -106,7 +106,7 @@ const editDelete = (e) => {
             editDivContato(index)
         } else {
             const contato = readContato()[index]
-            const response = confirm(`Deseja excluir esse contato ${contato.nome}?`)
+            const response = confirm(`Deseja excluir o contato de ${contato.nome}?`)
             if (response) {
                 deleteContato(index)
                 updateLista()
