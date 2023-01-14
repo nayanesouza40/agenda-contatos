@@ -17,34 +17,56 @@ body {
     padding: 25px;
 }
 
-.container h2 {
+h2 {
     text-align: center;
-    padding: 20px 0;
     font-size: 20px;
+    color: #8F8FA3;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 10px 8px;
 }
 
 /*formulário*/
 #form {
-    justify-content: center;
     background-color: #E4ECE4;
+    padding:  15px 30px;
+    text-align: center;
+    border: solid 2px #BBCFE1;
 }
 
 #form div {
     display: flex;
-    padding: 8px 0;
+    padding: 5px 15px;;
+    border: solid 2px #BBCFE1;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #F4F4F4;
+    color: #8F8FA3;
+}
+
+#form div label {
+    font-size: 12px;;
 }
 
 #form div input {
     color: #232323;
-    height: inherit;
+    border: 0;
+    background: transparent;
+    width:100%;
+    box-sizing: border-box;
+}
+
+#form div input:focus {
+    outline: 0;
 }
 
 #form #salvar {
-    width: inherit;
-    height: inherit;
-    padding: 8px;
-    text-align: center;
-    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #BBCFE1;
+    color: #fff;
+    padding: 4px 10px;
+    border: 0;
+    border-radius: 6px;
 }
 
 /*lista de contato*/
@@ -64,12 +86,13 @@ body {
     color: #fff;
     margin: -2px;
     padding: 8px 10px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .p-tel, .p-email {
-    margin: 6px 10px;
+    margin: 8px 10px;
     text-transform: lowercase;
+    color: #4d4d4d;
 }
 
 .excluir {

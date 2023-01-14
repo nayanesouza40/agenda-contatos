@@ -23,11 +23,11 @@ const deleteContato = (index) => {
 } 
 
 // VALIDAÇÕES
-const isValidNome = () => (document.getElementById('name').value != '')? true : console.log('erro')? true : console.log('erro')
+const isValidNome = () => (document.getElementById('name').value != '')? true : alert('Digite um nome para o contato!')
 
-const isValidFone = () => (document.getElementById('tel').value != '')? true : console.log('erro')? true : console.log('erro')
+const isValidFone = () => (document.getElementById('tel').value != '')? true : alert('Digite um número de telefone!')
 
-const isValidEmail = () => ((document.getElementById('email').value.indexOf('@') != -1)&&(document.getElementById('email').value.indexOf('.') != -1)&&(document.getElementById('email').value != ''))? true : console.log('erro')
+const isValidEmail = () => ((document.getElementById('email').value.indexOf('@') != -1)&&(document.getElementById('email').value.indexOf('.') != -1)&&(document.getElementById('email').value != ''))? true : alert('Digite um e-mail válido!')
 
 const isValidFields = () => {
     return (isValidFone() && isValidNome() && isValidEmail())
