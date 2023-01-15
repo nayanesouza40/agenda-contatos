@@ -22,19 +22,20 @@ body {
     background-color: #e9e9e9;
     padding:  15px 30px;
     text-align: center;
+    border: solid 2px #5a5a5a;
 }
 
 #form div {
     display: flex;
     padding: 10px 15px;;
-    border-radius: 10px;
     margin: 15px;
     background-color: #F4F4F4;
-    color: #5a5a5a;
+    color: #393939;
+    border: solid 2px #5a5a5a;
 }
 
 #form div input {
-    color: #5a5a5a;
+    color: #393939;
     border: 0;
     background: transparent;
     width:100%;
@@ -47,11 +48,13 @@ body {
 
 #form #salvar {
     margin-top: 10px;
-    background-color: #5a5a5a;
-    color: #e9e9e9;
+    background-color: #f4f4f4;
+    color: #5a5a5a;
     padding: 4px 10px;
     border: 0;
     border-radius: 6px;
+    border: solid 2px #5a5a5a;
+    font-size: 12px;
 }
 
 /*lista de contato*/
